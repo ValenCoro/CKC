@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="light">
+    <ion-title class="header-title">
+      Perfil
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="irATab1()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<div class="container">
+  <h2 class="form-title">Completa tu perfil</h2>
+
+  <form #formulario="ngForm">
+  <ion-item class="form-item">
+    <ion-label position="floating" aria-label="Nombre completo"></ion-label>
+    <ion-input type="text" name="nombreCompleto" [(ngModel)]="perfilService.perfil.nombreCompleto" required label="Nombre completo"></ion-input>
+  </ion-item>
+  <p class="error" *ngIf="formulario.controls && formulario.controls['nombreCompleto'] && formulario.controls['nombreCompleto'].invalid && formulario.controls['nombreCompleto'].touched">Ingrese un nombre válido</p>
+
+  <ion-item class="form-item">
+    <ion-label position="floating" aria-label="Número telefónico"></ion-label>
+    <ion-input type="tel" name="celular" [(ngModel)]="perfilService.perfil.celular" required label="Número telefónico"></ion-input>
+  </ion-item>
+  <p class="error" *ngIf="formulario.controls && formulario.controls['celular'] && formulario.controls['celular'].invalid && formulario.controls['celular'].touched">Ingrese un número válido</p>
+
+  <ion-item class="form-item">
+    <ion-label position="floating" aria-label="Correo electrónico"></ion-label>
+    <ion-input type="email" name="email" [(ngModel)]="perfilService.perfil.email" required label="Correo electrónico"></ion-input>
+  </ion-item>
+  <p class="error" *ngIf="formulario.controls && formulario.controls['email'] && formulario.controls['email'].invalid && formulario.controls['email'].touched">Ingrese un correo electrónico válido</p>
+  
+
+  <ion-item class="form-item">
+    <ion-label position="floating" aria-label="Domicilio"></ion-label>
+    <ion-input type="text" name="direccion" [(ngModel)]="perfilService.perfil.direccion" required label="Domicilio"></ion-input>
+  </ion-item>
+  <p class="error" *ngIf="formulario.controls && formulario.controls['direccion'] && formulario.controls['direccion'].invalid && formulario.controls['direccion'].touched">Ingrese un domicilio válido</p>
+
+  <ion-item class="form-item">
+    <ion-label aria-label="Fecha de nacimiento">Fecha de nacimiento</ion-label>
+    <input type="date" name="fechaNacimiento" [(ngModel)]="perfilService.perfil.fechaNacimiento" required aria-label="Fecha de nacimiento">
+  </ion-item>
+  
+  <p class="error" *ngIf="formulario.controls && formulario.controls['fechaNacimiento'] && formulario.controls['fechaNacimiento'].invalid && formulario.controls['fechaNacimiento'].touched">Ingrese una fecha válida</p>
+
+  <ion-button expand="block" color="light" class="submit-button" (click)="guardarDatosLocal()">Enviar datos</ion-button>
+</form>
+
+  
+</div>
+
+  

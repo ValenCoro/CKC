@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <img src="../../assets/Cuadro.png" alt="" class="logo">
+    <ion-title>
+      Classic Kit Clothing
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Productos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-menu-toggle>
+      <ion-button class="custom-menu-buttoncerrar">Cerrar Menu</ion-button>
+    </ion-menu-toggle>
+
+    <ion-list *ngFor="let item of categorias" button [routerLink]="['/categorias', item.id]">
+      <ion-item class="no-margin">
+        <ion-thumbnail slot="start">
+          <img [src]="item.imgUrl" alt="{{ item.nombre }}">
+        </ion-thumbnail>
+        <ion-label>{{ item.nombre }}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+  
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding" class="ion-padding ion-text-center">
+    <p class="resaltado">VESTITE COMO TUS IDOLOS</p>
+    <ion-menu-toggle>
+      <ion-button class="custom-menu-buttonabrir">Comprar</ion-button>
+    </ion-menu-toggle>
+    
+  </ion-content>
+</div>

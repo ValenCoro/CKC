@@ -1,0 +1,86 @@
+#categorias-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    a{
+      min-width: 150px;
+      flex: 1;
+        font-weight: 100px;
+        margin: 10px 10px;
+        padding: 60px 20px;
+        text-align: center;
+        border-radius: 10px ;
+        color: white;
+        background-size: cover;
+        background-position: center;
+        text-decoration: none;
+        font-size: 30px;
+        
+
+    }
+}
+
+ion-content {
+  --background: url("https://i.pinimg.com/564x/c3/29/5b/c3295bedded9fd7ce15b7c4f4b5a42fc.jpg")no-repeat center center fixed;
+  background-size: cover; 
+}
+  
+
+
+.custom-menu-buttoncerrar  {
+  --background: black;
+  color: white;
+}
+
+.custom-menu-buttonabrir  {
+  --background: black; 
+  color: white;
+}
+
+ion-menu ion-content {
+  --background: white; 
+}
+
+ion-item{
+  font-size: 20px;
+  height: 200px;
+  line-height: 60px; 
+  margin: 30px 0 0 0;
+  padding: 0;
+  color: black;
+  --background: white;
+}
+
+.no-margin {
+  margin-bottom: -20px !important; 
+}
+
+ion-thumbnail{
+  width: 80px; 
+  height: auto;
+}
+
+ion-list{
+  background-color: transparent;
+  
+}
+
+.resaltado{
+  text-shadow: 10px 10px 25px rgba(0, 0, 0, 1);
+  font-weight: 800;
+}
+
+
+.logo {
+  margin-left: 85px;
+  width: 8vw;
+  height: 4vh;
+}
+
+ion-title {
+  margin-left: 15px;
+}
+
+p {
+  font-family: 'Times New Roman', Times, serif;
+}
