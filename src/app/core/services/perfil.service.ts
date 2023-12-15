@@ -32,7 +32,7 @@ export class PerfilService {
 
   async guardarDatosLocal(): Promise<void> {
     const toast = await this.toastController.create({
-      message: 'Datos guardados en localStorage con éxito',
+      message: 'Datos enviados con exito',
       duration: 2000,
       position: 'bottom'
     });
