@@ -19,6 +19,9 @@
   <img src="{{producto.imagen}}" alt="">
   <p>{{producto.detalles}}</p>
   <p>${{producto.precio}}</p>
+<div class="centrado">
   <app-contador-cantidad (cantidadCambiada)="cantidad=$event"></app-contador-cantidad>
+</div>
+  
   <ion-button fill="clear" shape="round" expand="block" (click)="onAgregarAlCarritoClicked()" [disabled]="!producto.tieneStock"> Agregar al carrito </ion-button>
 </ion-content>
