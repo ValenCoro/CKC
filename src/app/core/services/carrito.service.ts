@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Carrito } from '../interfaces/carrito';
 import { Producto } from '../interfaces/productos';
+import { PerfilService } from './perfil.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarritoService {
   
-  constructor() {
+  constructor(private perfilService: PerfilService) {
     const memoria = localStorage.getItem('carrito');
     if(memoria) {
       this.carrito = JSON.parse(memoria);
@@ -65,19 +66,30 @@ export class CarritoService {
     })
   }
 
-  generarMensaje(){
-    const primeraParte = "https://wa.me/+543416108425?text=";
-    let parteProductos = ''
-    this.carrito.forEach(itemCarrito => {
-      parteProductos += `* ${itemCarrito.producto.nombre} - ${itemCarrito.cantidad}`
-    });
-    const ultimaParte = `Se realizó el siguiente pedido:
-    Productos:
-    ${parteProductos}
-    Total: $${this.totalCarrito}
-    Dirección de envío: Bv segui 1050`;
-    return encodeURI(primeraParte+ultimaParte);
-  }
+  generarMensaje() {
+  const primeraParte = "https://wa.me/+543412257427?text=";
 
+ 
+  let parteProductos = '';
+  this.carrito.forEach(itemCarrito => {
+    parteProductos += * ${itemCarrito.producto.nombre} - ${itemCarrito.cantidad}\n;
+  });
+
+  
+  const perfil = this.perfilService.getPerfil();
+
+  
+  const ultimaParte = `Se realizó el siguiente pedido:
+  Productos:
+  ${parteProductos}
+  Total: $${this.totalCarrito}
+  Dirección de envío: ${perfil.direccion}
+  Nombre: ${perfil.nombreCompleto}
+  Número telefónico: ${perfil.celular}
+  Fecha de nacimiento: ${perfil.fechaNacimiento}`;
+
+  
+  return encodeURI(primeraParte + ultimaParte);
+}
 
 }
