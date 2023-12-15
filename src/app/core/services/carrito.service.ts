@@ -72,8 +72,9 @@ export class CarritoService {
  
   let parteProductos = '';
   this.carrito.forEach(itemCarrito => {
-    parteProductos += `* ${itemCarrito.producto.nombre} - ${itemCarrito.cantidad}\n`;
-  });
+     parteProductos += `* ${itemCarrito.producto.nombre} - ${itemCarrito.cantidad}\n`;
+    });
+    
 
   
   const perfil = this.perfilService.getPerfil();
