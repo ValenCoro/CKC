@@ -19,6 +19,23 @@
   <img src="{{producto.imagen}}" alt="">
   <p>{{producto.detalles}}</p>
   <p>${{producto.precio}}</p>
+
+  <ion-item>
+    <ion-label>Talles</ion-label>
+    <ion-select placeholder="Seleccionar talla">
+      <ion-select-option value="s">S</ion-select-option>
+      <ion-select-option value="m">M</ion-select-option>
+      <ion-select-option value="l">L</ion-select-option>
+      <ion-select-option value="l">XL</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+ <div class="centrado">
+  <div class="ion-text-center">
+    <app-contador-cantidad (cantidadCambiada)="cantidad=$event"></app-contador-cantidad>
+  </div>
+</div>
+  
 <div class="centrado">
   <app-contador-cantidad (cantidadCambiada)="cantidad=$event"></app-contador-cantidad>
 </div>
