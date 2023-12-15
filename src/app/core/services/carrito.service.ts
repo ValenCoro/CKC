@@ -75,7 +75,7 @@ export class CarritoService {
     Productos:
     ${parteProductos}
     Total: $${this.totalCarrito}
-    Dirección de envío: DIRECCION DE EJEMPLO`;
+    Dirección de envío: Bv segui 1050`;
     return encodeURI(primeraParte+ultimaParte);
   }
 
